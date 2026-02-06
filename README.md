@@ -11,6 +11,7 @@ This repository explores different architectures to improve the accuracy, robust
 | `correctiveRAG/` | **[corrective_rag.ipynb](correctiveRAG/corrective_rag.ipynb)** | **Corrective RAG (CRAG)**: Improves robustness by "correcting" retrieval failures. If retrieved documents are irrelevant, it falls back to a web search. Implemented with **LangGraph**. |
 | `adv_RAG/` | **[self_RAG.ipynb](adv_RAG/self_RAG.ipynb)** | **Self-RAG**: A framework where the LLM critiques its own retrieval and generation to ensure high quality and relevance. |
 | `adv_RAG/` | **[crossEncoder.ipynb](adv_RAG/crossEncoder.ipynb)** | **Cross-Encoder Reranking**: Utilizes Cross-Encoders to re-rank retrieved documents, significantly improving the precision of the context provided to the LLM. |
+| `adv_RAG/` | **[self_query_retrieval.ipynb](adv_RAG/self_query_retrieval.ipynb)** | **Self-Querying Retrieval**: Uses an LLM to parse natural language queries into structured metadata filters for more precise vector search. |
 
 ## 🛠️ Tech Stack
 
@@ -18,7 +19,7 @@ This repository explores different architectures to improve the accuracy, robust
 - **LLMs**: Google Gemini (`gemini-1.5-flash`), Groq (Llama 3, etc.)
 - **Vector Store**: [ChromaDB](https://www.trychroma.com/)
 - **Search**: [Tavily AI](https://tavily.com/)
-- **Embeddings**: Google Generative AI Embeddings
+- **Embeddings**: Google Generative AI Embeddings, Cohere Embeddings
 
 ## 🔑 Prerequisites
 
@@ -28,6 +29,7 @@ Ensure you have the following API keys set in your environment (or `.env` file):
 GOOGLE_API_KEY=your_google_api_key
 TAVILY_API_KEY=your_tavily_api_key
 GROQ_API_KEY=your_groq_api_key
+COHERE_API_KEY=your_cohere_api_key
 ```
 
 ## 📦 Installation
@@ -40,7 +42,7 @@ GROQ_API_KEY=your_groq_api_key
 
 2. **Install dependencies**:
    ```bash
-   pip install langchain langchain-google-genai langchain-community langchain-core langgraph chromadb tavily-python python-dotenv ipykernel
+   pip install langchain langchain-google-genai langchain-community langchain-core langchain-groq langchain-cohere langchain-chroma langgraph chromadb tavily-python python-dotenv ipykernel
    ```
 
 ## 🏃‍♂️ Usage
